@@ -6,9 +6,9 @@
 <Element>//*[@class='bm-burger-button'][contains(text(),'Open Menu')]</Element>
 </menu>
 
-<logout>
+<lockeduser>
 <identifier>xpath</identifier>
-<Element>//*[@id="logout_sidebar_link"]</Element>
-</logout>
+<Element>//*[@class="error-button")]</Element>
+</lockeduser>
 
 </logout>

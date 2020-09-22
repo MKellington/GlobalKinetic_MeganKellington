@@ -19,9 +19,6 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 
-
-
-
 public class ApplicationSpecific {
 	UtilityFunctions utils = new UtilityFunctions(); 
 	static DataFunctions data = new DataFunctions();
@@ -71,19 +68,24 @@ public class ApplicationSpecific {
 				try
 				{	
 					// Click Menu button
-					utils.ClickObject(driver, "menu", sDefaultPath+"\\Repository\\logout.xml");
+					WebElement menu = driver.findElement(By.className("bm-burger-bars"));
+					WebElement strmenu = menu.findElement(By.xpath("//*[contains(text(),'Open Menu')]"));
+					strmenu.click();
 					utils.ExtentLogPass(driver, "Menu button clicked", logger, true, subfolderPath);
+					TimeUnit.SECONDS.sleep(3);
 					
-					// Wait for logout button 
-					utils.waitforProperty(driver, "logout", 560, sDefaultPath+"\\Repository\\logout.xml");
-					// Click Logout button
-					utils.ClickObject(driver, "logout", sDefaultPath+"\\Repository\\logout.xml");
+					// Click Logout button 
+					List <WebElement> logout = driver.findElements(By.xpath("//*[@class='bm-item menu-item']"));
+					int strlogout = logout.size();
+					System.out.println(strlogout);
+					logout.get(2).click();
 					TimeUnit.SECONDS.sleep(3);
 					
 					// Verify logout button has been clicked
 					if(utils.checkIfObjectIsDisplayed(driver, "btnlogin", sDefaultPath+"\\Repository\\login.xml"))
 					{
 						utils.ExtentLogPass(driver, "Logout Successful", logger, true, subfolderPath);
+						driver.quit();
 						
 					}
 					else
@@ -177,24 +179,15 @@ public class ApplicationSpecific {
 				Function Name: 	Verify locked user
 				* @param sDefaultPath 
 				******************************************************************************/
-					public void VerifyLockedUser(WebDriver driver, ExtentTest logger, String sDefaultPath, String subfolderPath)
+					public void VerifyLockedUser(WebDriver driver,String lockedMsg, ExtentTest logger, String sDefaultPath, String subfolderPath)
 					{
 						try
 						{
 							// Verify if login button is still there 
 							if(utils.checkIfObjectIsDisplayed(driver, "btnlogin", sDefaultPath+"\\Repository\\login.xml"))
 							{
-								// Verify error msg is displayed
-								if(utils.checkIfObjectIsDisplayed(driver, "strlockederror", sDefaultPath+"\\Repository\\login.xml"))
-								{
-									utils.ExtentLogPass(driver, "User is locked", logger, true, subfolderPath);
-									driver.quit();
-								}
-								else
-								{
-									utils.ExtentLogFail(driver, "User NOT locked", logger, true, subfolderPath);
-								}
-								
+								utils.ExtentLogPass(driver, "User not logged in", logger, true, subfolderPath);
+								driver.quit();
 							}
 							else
 							{

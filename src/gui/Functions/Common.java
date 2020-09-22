@@ -1,6 +1,5 @@
 package gui.Functions;
 
-
 import edu.emory.mathcs.backport.java.util.concurrent.TimeUnit;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -49,6 +48,7 @@ public abstract class Common {
  	protected String Surname;
  	protected String ZipCode;
 	protected String Product;
+	protected String LockedMsg;
 	
 	 public int intInvocation;
 	 
@@ -162,6 +162,7 @@ public abstract class Common {
 	    	                	Surname = data.getCellData("Surname", iRow, sheet, null, null, "Excel");
 	    	                	ZipCode = data.getCellData("ZipCode", iRow, sheet, null, null, "Excel");
 	    	                	Product = data.getCellData("Product", iRow, sheet, null, null, "Excel");
+	    	                	LockedMsg = data.getCellData("LockedMsg", iRow, sheet, null, null, "Excel");
 	    	             break;
 	    	            }
 

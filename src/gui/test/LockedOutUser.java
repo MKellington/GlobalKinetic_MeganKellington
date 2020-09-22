@@ -11,7 +11,7 @@ public class LockedOutUser extends Common {
 	@BeforeClass
 	public void setUpBeforeClass() throws Exception {
 		
-		setupDataAndSelenium(1,"AddProduct");	
+		setupDataAndSelenium(3,"LockedOutUser");	
 		
 	} 
 	
@@ -27,7 +27,7 @@ public class LockedOutUser extends Common {
 	    applicationspecification.Login(driver, data.getLockedUserName(), data.getLockedPassword(), logger,sDefaultPath, subfolderPath);
 	    
 	    // Verify user is locked
-	    applicationspecification.VerifyLockedUser(driver, logger, sDefaultPath, subfolderPath);
+	    applicationspecification.VerifyLockedUser(driver,LockedMsg, logger, sDefaultPath, subfolderPath);
 
 
 		extent.flush();
