@@ -35,17 +35,6 @@ public class XMLreportEditor {
 	            //update attribute value
 	            updateAttributeValue(doc,strScenarioName);
 	            
-	            
-	            /*
-	            //update Element value
-	            updateElementValue(doc);
-	            
-	            //delete element
-	            deleteElement(doc);
-	            
-	            //add new element
-	            addElement(doc);
-	            */
 	            //write the updated document to file or console
 	            doc.getDocumentElement().normalize();
 	            TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -115,27 +104,9 @@ public class XMLreportEditor {
         	
         
         	testsuiteElement = (Element) testsuite.item(i);
-            
-           //String gender = testsuiteElement.getElementsByTagName("gender").item(0).getFirstChild().getNodeValue();
-            
             testsuiteElement.setAttribute("name", strTestName);
           
-            
-         /*   if( testsuiteElement.getElementsByTagName("name").item(i).getFirstChild().getNodeValue().equalsIgnoreCase("nameatttibute"))
-            {
-            	
-            	testsuiteElement.setAttribute("id", "M"+testsuiteElement.getAttribute("id"))
-            }
-            
-            if(gender.equalsIgnoreCase("male")){
-            	
-            	
-                //prefix id attribute with M
-            	testsuiteElement.setAttribute("id", "M"+testsuiteElement.getAttribute("id"));
-            }else{
-                //prefix id attribute with F
-            	testsuiteElement.setAttribute("id", "F"+testsuiteElement.getAttribute("id"));
-            }*/
+           
         }
     }
 

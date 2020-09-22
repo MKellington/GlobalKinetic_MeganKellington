@@ -349,63 +349,9 @@ public class ApplicationSpecific {
 									try
 									{
 										
-										// Click on menu
-										utils.ClickObject(driver, "menu", sDefaultPath+"\\Repository\\logout.xml");
-										TimeUnit.SECONDS.sleep(3);
-										
-										// Menu clicked
-										if(utils.checkIfObjectIsDisplayed(driver, "logout", sDefaultPath+"\\Repository\\logout.xml"))
-										{
-											utils.ExtentLogPass(driver, "Products displayed", logger, true, subfolderPath);
-										}
-										else
-										{
-											utils.ExtentLogFail(driver, "Products NOT displayed", logger, true, subfolderPath);
-											
-										}
-										
-										// Navigate through the different menu options
-										switch(Menu) 
-										{
-										case "About":
-											// Click Continue button
-											utils.ClickObject(driver, "btncontinueshopping", sDefaultPath+"\\Repository\\main.xml");
-											
-											// Verify button was clicked
-											if(utils.checkIfObjectIsDisplayed(driver, "strfirstname", sDefaultPath+"\\Repository\\main.xml"))
-											{
-												utils.ExtentLogPass(driver, "Continue shopping button clicked", logger, true, subfolderPath);
-											}
-											else
-											{
-											utils.ExtentLogFail(driver, "Continue shopping button NOT clicked", logger, true, subfolderPath);
-											}
-											
-											break;
-										
-										case "Checkout":
-											// Click checkout button
-											utils.ClickObject(driver, "btncheckout", sDefaultPath+"\\Repository\\main.xml");
-											
-											// Verify button was clicked
-											if(utils.checkIfObjectIsDisplayed(driver, "txtfirstname", sDefaultPath+"\\Repository\\main.xml"))
-											{
-											utils.ExtentLogPass(driver, "Checkout button clicked", logger, true, subfolderPath);
-											}
-											else
-											{
-											utils.ExtentLogFail(driver, "Checkout button NOT clicked", logger, true, subfolderPath);
-											}
-											
-											break;
-											 
-										  default:
-											utils.ExtentLogFail(driver, "Buttons NOT found", logger, true, sDefaultPath);
-											
-											break;
 										
 								
-										}
+										
 
 									}
 									catch(Exception e)
