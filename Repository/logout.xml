@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<logout>
+
+<menu>
+<identifier>xpath</identifier>
+<Element>//*[@class='bm-burger-button'][contains(text(),'Open Menu')]</Element>
+</menu>
+
+<logout>
+<identifier>xpath</identifier>
+<Element>//*[@id="logout_sidebar_link"]</Element>
+</logout>
+
+</logout>

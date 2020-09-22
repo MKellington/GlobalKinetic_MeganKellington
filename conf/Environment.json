@@ -1,0 +1,8 @@
+{
+    "weburl": "https://www.saucedemo.com/",
+	"webusername":"standard_user",
+	"webpassword": "secret_sauce",
+	"lockedusername":"locked_out_user",
+	"lockedpassword": "secret_sauce"
+
+}

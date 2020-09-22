@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<login>
+
+<txtusername>
+<identifier>xpath</identifier>
+<Element>//*[@id="user-name"]</Element>
+</txtusername>
+
+<txtpassword>
+<identifier>xpath</identifier>
+<Element>//*[@id="password"]</Element>
+</txtpassword>
+
+<btnlogin>
+<identifier>xpath</identifier>
+<Element>//*[@id="login-button"]</Element>
+</btnlogin>
+
+<strlockederror>
+<identifier>xpath</identifier>
+<Element>//*[contains(text(),'Sorry, this user has been locked out.')]</Element>
+</strlockederror>
+
+</login>
